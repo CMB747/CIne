@@ -3,6 +3,13 @@
 @section('content')   
 
 <div class="container">
+    <div class="btn-group" role="group" aria-label="Basic mixed styles example">
+        <a href="{{route('entrances.pdf')}}" class="btn btn-danger">PDF</a>
+        <a href="/entrancesXLS" class="btn btn-warning">XLS</a>
+        <a href="/entrancesCSV" class="btn btn-success">CSV</a>
+        <a href="/entrancesxml" class="btn btn-info">XML</a>
+        <a href="{{route('entrances.grafica')}}" class="btn btn-warning">Gaficar</a>
+    </div>
     <div class="text-center">
         <h1>Entradas</h1>
     </div> 
@@ -11,6 +18,7 @@
             <button class="btn btn-primary">Agregar</button>
         </a>
     </div>
+    
     <table class="table table-responsive-md">
         <thead>
         <th>ID</th>
@@ -64,4 +72,4 @@
     </table>
 </div>
 
-    @endsection
+@endsection

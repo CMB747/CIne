@@ -5,6 +5,9 @@ namespace App\Http\Controllers;
 use App\Consumable;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
+use Barryvdh\DomPDF\Facade as PDF;
+use Maatwebsite\Excel\Facades\Excel;
+use App\Exports\ConsumablesExport;
 
 class ConsumableController extends Controller
 {
@@ -87,5 +90,19 @@ class ConsumableController extends Controller
     {
         $consumable->delete();
         return redirect()->route('consumables.index');
+    }
+
+    public function exportToPDF(){
+        $consumables = Consumable::get();
+        $pdf = PDF::loadView('consumables.exportToPDF', compact('consumables'));
+        return $pdf->download('AlimentosRegistrados.pdf');
+    }
+
+    public function exportToXls(){
+        return Excel::download(new ConsumablesExport, 'consumables.xlsx');
+    }
+
+    public function exportToCsv(){
+        return Excel::download(new ConsumablesExport, 'consumables.csv');
     }
 }

@@ -3,6 +3,13 @@
 @section('content')   
 
 <div class="container">
+    <div class="btn-group" role="group" aria-label="Basic mixed styles example">
+        <a href="{{route('premieres.pdf')}}" class="btn btn-danger">PDF</a>
+        <a href="/premieresXLS" class="btn btn-warning">XLS</a>
+        <a href="/premieresCSV" class="btn btn-success">CSV</a>
+        <a href="/premieresxml" class="btn btn-info">XML</a>
+        <a href="{{route('premieres.grafica')}}" class="btn btn-warning">Gaficar</a>
+    </div>
     <div class="text-center">
         <h1>Funciones</h1>
     </div> 

@@ -16,7 +16,7 @@
                     <div class="carousel-caption text-left">
                         <h1>Avengers ENDGAME</h1>
                         <p>Los Vengadores restantes deben encontrar una manera de recuperar a sus aliados para un enfrentamiento épico con Thanos, el malvado que diezmó el planeta y el universo.</p>
-                        <p><a class="btn btn-lg btn-primary" href="#" role="button">Compra tu entrada</a></p>
+                        <p><a class="btn btn-lg btn-primary" href="{{ url('/entrances') }}" role="button">Ver entradas</a></p>
                     </div>
                 </div>
             </div>
@@ -27,7 +27,7 @@
                         <h1>Dragon ball super broly</h1>
                         <p>Goku y Vegeta encuentran a Broly, un guerrero Saiyajin. Pero, ¿cómo sobrevivió a la destrucción de su planeta y dónde estuvo todo ese tiempo?
                             La situación empeora todavía más cuando Freezer vuelve al mundo de los vivos desde el infierno.</p>
-                        <p><a class="btn btn-lg btn-primary" href="#" role="button">Learn more</a></p>
+                        <p><a class="btn btn-lg btn-primary" href="{{ url('/entrances') }}" role="button">Ver entradas</a></p>
                     </div>
                 </div>
             </div>
@@ -38,7 +38,7 @@
                         <h1>Bumblebee</h1>
                         <p>En 1987, Charlie, una adolescente, encuentra a Bumblebee, muy herido, en el depósito de chatarra al que había llegado mientras huía.
                             Mientras lo restaura, Charlie percibe que lo que ha hallado no es un Volkswagen amarillo corriente.</p>
-                        <p><a class="btn btn-lg btn-primary" href="#" role="button">Browse gallery</a></p>
+                        <p><a class="btn btn-lg btn-primary" href="{{ url('/entrances') }}" role="button">Ver entradas</a></p>
                     </div>
                 </div>
             </div>

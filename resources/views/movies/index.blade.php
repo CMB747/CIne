@@ -1,9 +1,17 @@
 @extends('layouts.app')
 @section('title', 'Peliculas')
 @section('content')   
- 
-<div class="text-right"><a href=" {{route('movies.create') }} "> 
-    <button class="btn btn-primary">Agregar</button></a>
+<div class="container">
+    <div class="text-right"><a href=" {{route('movies.create') }} "> 
+        <button class="btn btn-primary">Agregar</button></a>
+    </div>
+    <div class="btn-group" role="group" aria-label="Basic mixed styles example">
+        <a href="{{route('movies.pdf')}}" class="btn btn-danger">PDF</a>
+        <a href="/moviesXLS" class="btn btn-warning">XLS</a>
+        <a href="/moviesCSV" class="btn btn-success">CSV</a>
+        <a href="/moviesxml" class="btn btn-info">XML</a>
+        <a href="{{route('movies.grafica')}}" class="btn btn-warning">Gaficar</a>
+    </div>
 </div>
 
 <div class="container">
@@ -16,7 +24,6 @@
     @forelse ($movies as $movie)
     <div class="row">
         <div class="card col-sm text-white bg-primary mb-3" style="width: 18rem;">
-            <img src="..." class="card-img-top" alt="...">
             <div class="card-body">
             <h5 class="card-title">{{ $movie->name }}</h5>
             <p class="card-text"> {{$movie->director}} </p>

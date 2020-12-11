@@ -6,8 +6,7 @@
 
 <br>
         <div class="container">
-            <div class="card col-sm bg-light mb-8" style="width: 18rem;">
-                <img src="..." class="card-img-top" alt="...">
+            <div class="card col-sm bg-light mb-8" style="width: 30rem;">
                 <div class="card-body">
                     <h4 class="card-title">{{ $movie->name }}</h4>
                     <h3 class="card-text">{{ $movie->director }}</h3>

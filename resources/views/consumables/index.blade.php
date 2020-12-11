@@ -1,27 +1,33 @@
 @extends('layouts.app')  
-
+@section('title', 'Consumibles')
 @section('content')   
-<div class="text-center">
-    <h1>Consumibles</h1>
-</div>
-<br><br>
 
-<div>
-    <a href="{{ route('consumables.create') }}">
-        <button class="btn btn-primary">Agregar</button>
-    </a>
-</div>
-
-<table class="table table-responsive-md">
-    <thead>
-    <th>ID</th>
-    <th>Artículo</th>
-    <th>Precio</th>
-    <th>Cantidad</th>
-    <th>Acciones</th>
-    </thead>
+<div class="container">
+    <div class="btn-group" role="group" aria-label="Basic mixed styles example">
+        <a href="{{route('consumibles.pdf')}}" class="btn btn-danger">PDF</a>
+        <a href="/consumablesXLS" class="btn btn-warning">XLS</a>
+        <a href="/consumablesCSV" class="btn btn-success">CSV</a>
+        <a href="/consumablesxml" class="btn btn-info">XML</a>
+        <a href="{{route('consumables.grafica')}}" class="btn btn-warning">Gaficar</a>
+    </div>
+    <div class="text-center">
+        <h1>Consumibles</h1>
+    </div>
+    <div>
+        <a href="{{ route('consumables.create') }}">
+            <button class="btn btn-primary">Agregar</button>
+        </a>
+    </div>
+    <table class="table table-responsive-md">
+        <thead>
+            <th>ID</th>
+            <th>Artículo</th>
+            <th>Precio</th>
+            <th>Cantidad</th>
+            <th>Acciones</th>
+        </thead>
     <tbody>
-    @forelse ($consumables as $consumable)
+        @forelse ($consumables as $consumable)
 
         <tr>
             <td>{{ $consumable->id }}</td>
@@ -54,14 +60,15 @@
                         </svg>
                     </button>
                 </form>
-            </td>
-        </tr>
-    @empty
-        <div class="text-center">
-            <p>No hay datos</p>
-        </div>
-    @endforelse
+                </td>
+            </tr>
+        @empty
+            <div class="text-center">
+                <p>No hay datos</p>
+            </div>
+        @endforelse
     </tbody>
-</table>
+    </table>
+</div>
 
 @endsection

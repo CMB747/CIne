@@ -5,6 +5,9 @@ namespace App\Http\Controllers;
 use App\Premiere;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
+use Barryvdh\DomPDF\Facade as PDF;
+use Maatwebsite\Excel\Facades\Excel;
+use App\Exports\PremieresExport;
 
 class PremiereController extends Controller
 {
@@ -86,5 +89,19 @@ class PremiereController extends Controller
     {
         $premiere->delete();
         return redirect()->route('premieres.index');
+    }
+
+    public function exportToPDF(){
+        $premieres = Premiere::get();
+        $pdf = PDF::loadView('premieres.exportToPDF', compact('premieres'));
+        return $pdf->download('FuncionesRegistradas.pdf');
+    }
+
+    public function exportToXls(){
+        return Excel::download(new PremieresExport, 'premieres.xlsx');
+    }
+
+    public function exportToCsv(){
+        return Excel::download(new PremieresExport, 'premieres.csv');
     }
 }

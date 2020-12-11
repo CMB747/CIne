@@ -11,6 +11,13 @@
             <button class="btn btn-primary">Agregar</button>
         </a>
     </div>
+    <div class="btn-group" role="group" aria-label="Basic mixed styles example">
+        <a href="{{route('rooms.pdf')}}" class="btn btn-danger">PDF</a>
+        <a href="/roomsXLS" class="btn btn-warning">XLS</a>
+        <a href="/roomsCSV" class="btn btn-success">CSV</a>
+        <a href="/roomsxml" class="btn btn-info">XML</a>
+        <a href="{{route('rooms.grafica')}}" class="btn btn-warning">Gaficar</a>
+    </div>
     <table class="table table-responsive-md">
         <thead>
         <th>ID</th>

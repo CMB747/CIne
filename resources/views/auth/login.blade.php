@@ -1,6 +1,6 @@
-{{-- @extends('layouts.app') -->
+ {{--@extends('layouts.app')--}}
 
-<!-- @section('content') --}}
+{{-- @section('content') --}}
 
  <!-- Original -->
 <!--<div class="container">
@@ -81,16 +81,15 @@
 <script type="text/javascript" src="{{asset('js/jquery.js')}}"></script>
 
     <div class="row">
-        <div class="col-sm-2 col-lg-4 col-md-4"></div>
+        <div class="col-sm-16 col-lg-16 col-md-16 body"></div>
         <div class="conainer">
-
+            
             <div class="row justify-content-center">
-                <div class="col-sm-16 col-lg-16 col-md-16 loginCard">
-                    <div class="card cardplus">
-                        <div class="card-body">
-                            <div align="center" class="alinearCentro">
-                                <img class="rounded-circle imagenCard" src="{{ asset('logos/logoCine.jpg') }}" alt="">
-                            </div>
+                <div class="col-sm-4 col-lg-8 col-md-8 login">
+                    <div class="card-grad">
+                        
+                        <div class="card-header">
+         
                             <form method="POST" action="{{ route('login') }}">
                                 @csrf
 
@@ -135,9 +134,9 @@
                                 </div>
 
                                 <div class="form-group row mb-0">
-                                    <div class="col-md-8 offset-md-4">
-                                        <button type="submit" class="btn btn-primary">
-                                            {{ __('Login') }}
+                                    <div class="row col">
+                                        <button type="submit" class="btn btn-primary col">
+                                            {{ __('Ingresar') }}
                                         </button>
 
                                         @if (Route::has('password.request'))
@@ -154,7 +153,7 @@
             </div>
         </div>
     </div>
-<div class="col-sm-2 col-lg-4 col-md-4"></div>
+<div class="col-sm-16 col-lg-16 col-md-16"></div>
 
 
 {{--@endsection--}}
